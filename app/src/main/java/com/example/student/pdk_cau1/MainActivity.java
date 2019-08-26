@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     EditText edtSoa,edtSob;
     TextView txtKQ;
-    Button btnTong;
+    Button btnTong,btnHieu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         txtKQ=(TextView) findViewById(R.id.txtKQ);
         btnTong=(Button) findViewById(R.id.btnTong);
+        btnHieu=(Button) findViewById(R.id.btnHieu);
 
         btnTong.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
                 int sob=Integer.parseInt(edtSob.getText().toString());
                 int tong=soa+sob;
                 txtKQ.setText("Tổng là: "+tong);
+            }
+        });
+
+        btnHieu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int soa=Integer.parseInt(edtSoa.getText().toString());
+                int sob=Integer.parseInt(edtSob.getText().toString());
+                int hieu=soa-sob;
+                txtKQ.setText("Hiệu là: "+hieu);
             }
         });
 
